@@ -6,12 +6,14 @@ const Gio = imports.gi.Gio;
 const Lang = imports.lang;
 const Mainloop = imports.mainloop;
 const Settings = imports.ui.settings;
+const Util = imports.misc.util;
 
 const UUID = "cryptocoins@pbojan";
 const DESKLET_ROOT = imports.ui.deskletManager.deskletMeta[UUID].path;
 const WIDTH = 220;
 const WIDTH_ICON = 50;
 const PADDING = 10;
+const HELP_URL = "https://github.com/pbojan/cryptocoins#usage-help";
 
 const httpSession = new Soup.SessionAsync();
 Soup.Session.prototype.add_feature.call(httpSession, new Soup.ProxyResolverDefault());
@@ -47,6 +49,10 @@ HelloDesklet.prototype = {
             this.cfgCoin = this.cfgCoin || "bitcoin";
             this.cfgCurrency = this.cfgCurrency || "usd";
             this.cfgRefreshInterval = this.cfgRefreshInterval || 10;
+
+            this._menu.addAction('Help', Lang.bind(this, function () {
+                Util.spawnCommandLine('xdg-open ' + HELP_URL);
+            }));
 
             this.fetchData(true);
         } catch (e) {
@@ -294,10 +300,17 @@ HelloDesklet.prototype = {
     },
 
     getFormattedPrice: function(price) {
-        return parseFloat(price).toLocaleString(undefined, {
+        var options = {
             style: "currency",
             currency: this.cfgCurrency
-        })
+        };
+
+        price = parseFloat(price);
+        if (price < 1) {
+            options['minimumFractionDigits'] = 5;
+        }
+
+        return price.toLocaleString(undefined, options);
     }
 };
 
