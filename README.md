@@ -2,6 +2,8 @@
 
 Cinnamon Desklet that displays the current price of more than **220+ coins** and their daily percent changes.
 
+![Desklet screenshot](screenshot.png)
+
 ## Usage Help
 
 #### Installation
@@ -41,7 +43,7 @@ Cinnamon Desklet that displays the current price of more than **220+ coins** and
 
 ## Bugs/Feedback
 
-If you find any bugs or stability issues please create an issue [here](https://github.com/pbojan/cryptocoins/issues) or send an email to [p.bojan@live.com](mailto:p.bojan@live.com).
+If you find any bugs or stability issues please create an issue [here](https://github.com/pbojan/cryptocoins-desklet-cinnamon/issues) or send an email to [p.bojan@live.com](mailto:p.bojan@live.com).
 
 If you have ideas for new features or improvements please send an email to [p.bojan@live.com](mailto:p.bojan@live.com).
 

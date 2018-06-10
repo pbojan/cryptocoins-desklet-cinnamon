@@ -250,7 +250,11 @@
     "tooltip": "In which currency to show information on the ticker",
     "options": {
       "USD ($)": "usd",
-      "EUR (€)": "eur"
+      "EUR (€)": "eur",
+      "AUD (A$)": "aud",
+      "CAD (C$)": "cad",
+      "CHF (Fr.)": "chf",
+      "GBP (£)": "gbp"
     }
   },
 

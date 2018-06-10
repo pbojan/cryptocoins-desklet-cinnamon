@@ -13,7 +13,7 @@ const DESKLET_ROOT = imports.ui.deskletManager.deskletMeta[UUID].path;
 const WIDTH = 220;
 const WIDTH_ICON = 50;
 const PADDING = 10;
-const HELP_URL = "https://github.com/pbojan/cryptocoins#usage-help";
+const HELP_URL = "https://github.com/pbojan/cryptocoins-desklet-cinnamon#usage-help";
 
 const httpSession = new Soup.SessionAsync();
 Soup.Session.prototype.add_feature.call(httpSession, new Soup.ProxyResolverDefault());
