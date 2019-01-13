@@ -10,12 +10,16 @@ const Util = imports.misc.util;
 
 const UUID = 'cryptocoins@pbojan';
 const DESKLET_ROOT = imports.ui.deskletManager.deskletMeta[UUID].path;
-const WIDTH = 220;
-const WIDTH_ICON = 50;
-const PADDING = 10;
 const HELP_URL = 'https://github.com/pbojan/cryptocoins-desklet-cinnamon#usage-help';
 const DONATE_URL = 'https://github.com/pbojan/cryptocoins-desklet-cinnamon#contributedonate';
 const API_URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
+const WIDTH = 220;
+const WIDTH_ICON = 50 / global.ui_scale;
+const PADDING = 10 / global.ui_scale;
+const FONT_SIZE_CONTAINER = parseInt(15 / global.ui_scale);
+const FONT_SIZE_HEADER = parseInt(16 / global.ui_scale);
+const FONT_SIZE_PRICE = parseInt(22 / global.ui_scale);
+const FONT_SIZE_LAST_UPDATED = parseInt(10 / global.ui_scale);
 
 const httpSession = new Soup.SessionAsync();
 Soup.Session.prototype.add_feature.call(httpSession, new Soup.ProxyResolverDefault());
@@ -94,6 +98,7 @@ HelloDesklet.prototype = {
       vertical: true,
       style_class: 'container'
     });
+    container.set_style('font-size: ' + FONT_SIZE_CONTAINER + 'px;');
 
     var label = new St.Label({
       style_class: 'apikey'
@@ -109,6 +114,7 @@ HelloDesklet.prototype = {
       vertical: true,
       style_class: 'container'
     });
+    container.set_style('font-size: ' + FONT_SIZE_CONTAINER + 'px;');
 
     var label = new St.Label({
       style_class: 'loading'
@@ -184,6 +190,7 @@ HelloDesklet.prototype = {
       width: WIDTH,
       style_class: 'container'
     });
+    this.container.set_style('font-size: ' + FONT_SIZE_CONTAINER + 'px;');
 
     var quote = data['quote'][this.cfgCurrency];
 
@@ -211,6 +218,7 @@ HelloDesklet.prototype = {
       width: WIDTH_ICON,
       style_class: 'containerLeft'
     });
+
     var file = Gio.file_new_for_path(DESKLET_ROOT + '/images/icons/' + data['symbol'].toLowerCase() + '.png');
     var gicon = new Gio.FileIcon({file: file});
     var image = new St.Icon({
@@ -229,6 +237,7 @@ HelloDesklet.prototype = {
     var label = new St.Label({
       style_class: 'header'
     });
+    label.set_style('font-size: ' + FONT_SIZE_HEADER + 'px;');
     label.set_text(data['name']);
     right.add(label);
 
@@ -255,6 +264,7 @@ HelloDesklet.prototype = {
       width: WIDTH - PADDING,
       style_class: 'containerPrice'
     });
+    center.set_style('font-size: ' + FONT_SIZE_PRICE + 'px;');
 
     this.priceLabel = new St.Label();
     this.priceLabel.set_text(this.getFormattedPrice(price));
@@ -323,6 +333,7 @@ HelloDesklet.prototype = {
       width: WIDTH - PADDING,
       style_class: 'lastUpdated'
     });
+    right.set_style('font-size: ' + FONT_SIZE_LAST_UPDATED + 'px;');
 
     date = new Date(date);
     this.lastUpdatedLabel = new St.Label();
