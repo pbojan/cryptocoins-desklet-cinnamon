@@ -120,12 +120,16 @@ HelloDesklet.prototype = {
   },
 
   fetchData: function(initUI) {
+    initUI = initUI || false;
+
     if (!this.cfgApiKey) {
       this.showNoApiKey();
       return;
     }
 
-    this.showLoading();
+    if (initUI) {
+      this.showLoading();
+    }
 
     var message = Soup.Message.new(
         'GET',
@@ -170,7 +174,7 @@ HelloDesklet.prototype = {
     this.setChangeData(this.change1D, quote['percent_change_24h']);
     this.setChangeData(this.change7D, quote['percent_change_7d']);
 
-    var date = new Date(data['last_updated'] * 1000);
+    var date = new Date(data['last_updated']);
     this.lastUpdatedLabel.set_text(date.toLocaleString());
   },
 
