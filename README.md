@@ -1,8 +1,8 @@
-## Crypto Currency Ticker (Desklet) for Cinnamon
+## Cryptocurrency Ticker (Desklet) for Cinnamon Desktop
 
-Cinnamon Desklet that displays the current price of more than **600+ crypto coins** and their daily percent changes.
+Cryptocurrency Ticker (Desklet) for Cinnamon Desktop that displays the current price of more than **600+ cryptocurrencies**, and their daily percent changes.
 
-Official website for news and updates: http://cryptocurrencyticker.info/
+The official website for news and updates about this Cryptocurrency Ticker: http://cryptocurrencyticker.info/
 
 ![Desklet screenshot](screenshot.png)
 
@@ -36,9 +36,9 @@ Official website for news and updates: http://cryptocurrencyticker.info/
 
 1. Click the right mouse button while hovering on the Desklet
 2. Select `Configure` from the menu
-3. The settings menu should appear and you can change the following:
+3. The config menu will appear where you should be able to change the following:
     - Your CoinMarketCap API key (you can get free at https://pro.coinmarketcap.com)
-    - What kind of coin to be displayed on the ticker
+    - What kind of cryptocurrency to be displayed on the ticker
     - In what currency the price should be displayed
     - The refresh interval when to get new data
 
@@ -52,7 +52,7 @@ If you have ideas for new features or improvements please send an email to [p.bo
 
 ## Contribute/Donate
 
-If you want to support the work and maintenance of this crypto Ticker, please consider donating. Every donation is highly appreciated!
+If you want to support the work and maintenance of this Cryptocurrency Ticker, please consider donating. Every donation is highly appreciated!
 
 ```
 BTC: bc1q82zg96fgeenr5ag254lnqt4nn77lzjf5nx9m00
