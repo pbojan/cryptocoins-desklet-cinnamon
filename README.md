@@ -1,6 +1,6 @@
 ## Crypto Currency Ticker (Desklet) for Cinnamon
 
-Cinnamon Desklet that displays the current price of more than **500+ crypto coins** and their daily percent changes.
+Cinnamon Desklet that displays the current price of more than **600+ crypto coins** and their daily percent changes.
 
 Official website for news and updates: http://cryptocurrencyticker.info/
 
@@ -61,34 +61,13 @@ LTC: ltc1q362me09lmxfcq6zex6968qsnnq6hz3nhxv4cyr
 ETH: 0x1125207ae7d169eb623fa228e5b2c48a6b6482d9
 ```
 
-Can't donate but you still want to help? Report a bug or even better solve one or improve this Crypto Ticker by creating a pull request.
-If you want to add new features please first send an email to [p.bojan@live.com](mailto:p.bojan@live.com) and describe your idea.
+**Can't donate, but you still want to help? Here are a few ways how to support this project:**
+* Give feedback, report any bug or issue you find
+* Improve the Desklet by creating a pull request to add new features. If you want to add new features please first send an email to [p.bojan@live.com](mailto:p.bojan@live.com) and describe your idea.
+* Star/Watch the project on Github
+* Spread the word and share this desklet with your friends, colleagues, social networks, etc. 
 
 ## Credits
 
-1. The Ticker currently is using the API from: https://coinmarketcap.com/
+1. The Desklet currently is using the PRO API from: https://coinmarketcap.com/
 2. The icons are from: https://github.com/cjdowner/cryptocurrency-icons
-
-## MIT License
-
-```
-Copyright (c) 2019 Bojan Petkovski
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
