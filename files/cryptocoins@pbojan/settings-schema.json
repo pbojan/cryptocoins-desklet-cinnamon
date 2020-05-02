@@ -18,13 +18,13 @@
 
   "head2" : {
     "type" : "header",
-    "description" : "Coin Options"
+    "description" : "Cryptocurrency Options"
   },
 
   "coin": {
     "type": "combobox",
     "default": "1",
-    "description": "Select Coin",
+    "description": "Select Cryptocurrency",
     "tooltip": "For which coin to show information on the ticker",
     "options": {
       "Bitcoin": "1",
@@ -687,5 +687,28 @@
       "2 Hours": 120,
       "4 Hours": 240
     }
+  },
+
+  "head3": {
+    "type": "header",
+    "description": "Desklet UI"
+  },
+
+  "bgColor": {
+    "type": "colorchooser",
+    "default": "#303030",
+    "description": "Background Color",
+    "tooltip": "Background Color for the Desklet."
+  },
+
+  "bgBorderRadius": {
+    "type": "spinbutton",
+    "default": 10,
+    "min": 0,
+    "max": 50,
+    "units": "pixels",
+    "step": 1,
+    "description": "Background Border Radius",
+    "tooltip": "Background Border Radius in px, select 0 to set no border radius."
   }
 }
