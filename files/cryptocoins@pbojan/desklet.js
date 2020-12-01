@@ -19,6 +19,7 @@ const PADDING = 10 / global.ui_scale;
 const FONT_SIZE_CONTAINER = parseInt(15 / global.ui_scale);
 const FONT_SIZE_HEADER = parseInt(16 / global.ui_scale);
 const FONT_SIZE_PRICE = parseInt(22 / global.ui_scale);
+const FONT_SIZE_OWNING = parseInt(16 / global.ui_scale);
 const FONT_SIZE_LAST_UPDATED = parseInt(10 / global.ui_scale);
 
 const httpSession = new Soup.SessionAsync();
@@ -39,6 +40,8 @@ CryptocurrencyTicker.prototype = {
   change1H: null,
   change1D: null,
   change7D: null,
+  owningLabel: null,
+  fiatLabel: null,
 
   _init: function(metadata, desklet_id) {
     try {
@@ -48,6 +51,8 @@ CryptocurrencyTicker.prototype = {
       this.settings.bind('apiKey', 'cfgApiKey', this.onSettingsChanged);
       this.settings.bind('coin', 'cfgCoin', this.onSettingsChanged);
       this.settings.bind('currency', 'cfgCurrency', this.onSettingsChanged);
+      this.settings.bind('owning', 'cfgOwning', this.onSettingsChanged);
+      this.settings.bind('fiat', 'cfgFiat', this.onSettingsChanged);
       this.settings.bind('refreshInterval', 'cfgRefreshInterval', this.onRefreshIntervalChanged);
       this.settings.bind('bgColor', 'cfgBgColor', this.onUISettingsChanged);
       this.settings.bind('bgBorderRadius', 'cfgBgBorderRadius', this.onUISettingsChanged);
@@ -57,6 +62,8 @@ CryptocurrencyTicker.prototype = {
       this.cfgApiKey = this.cfgApiKey || '';
       this.cfgCoin = this.cfgCoin || '1';
       this.cfgCurrency = this.cfgCurrency.toUpperCase() || 'USD';
+      this.cfgOwning = this.cfgOwning || 0.0;
+      this.cfgFiat = this.cfgFiat || 0.0;
       this.cfgRefreshInterval = this.cfgRefreshInterval || 30;
       this.cfgBgColor = this.cfgBgColor || '#303030';
       this.cfgBgBorderRadius = this.cfgBgBorderRadius || 10;
@@ -190,6 +197,8 @@ CryptocurrencyTicker.prototype = {
     this.setChangeData(this.change1H, quote['percent_change_1h']);
     this.setChangeData(this.change1D, quote['percent_change_24h']);
     this.setChangeData(this.change7D, quote['percent_change_7d']);
+    this.fiatLabel.set_text("Bought "+this.getFormattedPrice(this.cfgFiat));
+    this.owningLabel.set_text("Worth "+this.getFormattedPrice(this.cfgOwning));
 
     var date = new Date(data['last_updated']);
     this.lastUpdatedLabel.set_text(date.toLocaleString());
@@ -214,6 +223,12 @@ CryptocurrencyTicker.prototype = {
     this.container.add(this.addChange('Change 1H:', this.change1H, quote['percent_change_1h']));
     this.container.add(this.addChange('Change 1D:', this.change1D, quote['percent_change_24h']));
     this.container.add(this.addChange('Change 7D:', this.change7D, quote['percent_change_7d']));
+    if(this.cfgFiat > 0.0) {
+      this.container.add(this.addFiat(this.cfgFiat));
+    }
+    if(this.cfgOwning > 0.0) {
+      this.container.add(this.addOwning(this.cfgOwning, quote['price']));
+    }
     this.container.add(this.addLastUpdated(data['last_updated']));
 
     this.setContent(this.container);
@@ -281,6 +296,50 @@ CryptocurrencyTicker.prototype = {
     this.priceLabel.set_text(this.getFormattedPrice(price));
 
     center.add(this.priceLabel);
+    row.add(center);
+
+    return row;
+  },
+
+  addOwning: function(owning, price) {
+    var row = new St.BoxLayout({
+      vertical: false,
+      width: WIDTH - PADDING,
+      style_class: 'row'
+    });
+    var center = new St.BoxLayout({
+      vertical: true,
+      width: WIDTH - PADDING,
+      style_class: 'containerOwning'
+    });
+    center.set_style('font-size: ' + FONT_SIZE_OWNING + 'px;');
+
+    this.owningLabel = new St.Label();
+    this.owningLabel.set_text("Worth "+this.getFormattedPrice(owning*price));
+
+    center.add(this.owningLabel);
+    row.add(center);
+
+    return row;
+  },
+
+  addFiat: function(fiat) {
+    var row = new St.BoxLayout({
+      vertical: false,
+      width: WIDTH - PADDING,
+      style_class: 'row'
+    });
+    var center = new St.BoxLayout({
+      vertical: true,
+      width: WIDTH - PADDING,
+      style_class: 'containerFiat'
+    });
+    center.set_style('font-size: ' + FONT_SIZE_OWNING + 'px;');
+
+    this.owningLabel = new St.Label();
+    this.owningLabel.set_text("Bought "+this.getFormattedPrice(fiat));
+
+    center.add(this.owningLabel);
     row.add(center);
 
     return row;

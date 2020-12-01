@@ -34,6 +34,17 @@
     margin: 2px auto 5px auto;
 }
 
+.containerOwning {
+    color: #73c4ff;
+    text-align: center;
+    margin: 2px auto 5px auto;
+}
+.containerFiat {
+    color: #73c4ff;
+    text-align: center;
+    margin: 2px auto 5px auto;
+}
+
 .containerCenter .left {
     text-align: right;
     padding-right: 3px;
