@@ -651,6 +651,20 @@
     }
   },
 
+  "owning": {
+    "type": "entry",
+    "default": "0.00",
+    "description": "How many of the cryptocurrency do you own",
+    "tooltip": ""
+  },
+
+  "fiat": {
+    "type": "entry",
+    "default": "0.00",
+    "description": "Bought for how many fiat",
+    "tooltip": ""
+  },
+
   "currency": {
     "type": "combobox",
     "default": "USD",
