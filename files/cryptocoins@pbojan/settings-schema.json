@@ -651,20 +651,6 @@
     }
   },
 
-  "owning": {
-    "type": "entry",
-    "default": "0.00",
-    "description": "How many of the cryptocurrency do you own",
-    "tooltip": ""
-  },
-
-  "fiat": {
-    "type": "entry",
-    "default": "0.00",
-    "description": "Bought for how many fiat",
-    "tooltip": ""
-  },
-
   "currency": {
     "type": "combobox",
     "default": "USD",
@@ -703,6 +689,20 @@
     }
   },
 
+  "assetsOwned": {
+    "type": "entry",
+    "default": "0.00",
+    "description": "Assets Owned",
+    "tooltip": "How many of the cryptocurrency assets do you own?"
+  },
+
+  "assetsValue": {
+    "type": "entry",
+    "default": "0.00",
+    "description": "Assets Value",
+    "tooltip": "For how much did you buy them? Used to calculate profits. Used together with Assets Owned field."
+  },
+
   "head3": {
     "type": "header",
     "description": "Desklet UI"
@@ -724,5 +724,10 @@
     "step": 1,
     "description": "Background Border Radius",
     "tooltip": "Background Border Radius in px, select 0 to set no border radius."
+  },
+
+  "head4": {
+    "type": "header",
+    "description": "This is an OPEN SOURCE project, if you like it please consider donating! https://cryptocurrencyticker.info/"
   }
 }

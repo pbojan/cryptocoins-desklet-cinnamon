@@ -34,15 +34,15 @@
     margin: 2px auto 5px auto;
 }
 
-.containerOwning {
-    color: #73c4ff;
+.containerAssetsOwned {
+    color: #a6ccf3;
     text-align: center;
-    margin: 2px auto 5px auto;
+    margin: 10px auto 2px auto;
 }
-.containerFiat {
-    color: #73c4ff;
+
+.containerAssetsValue {
     text-align: center;
-    margin: 2px auto 5px auto;
+    margin: 2px auto 2px auto;
 }
 
 .containerCenter .left {
