@@ -252,7 +252,7 @@ CryptocurrencyTicker.prototype = {
     });
     var left = new St.BoxLayout({
       vertical: true,
-      width: WIDTH_ICON,
+      width: 50,
       style_class: 'containerLeft'
     });
 
@@ -268,7 +268,7 @@ CryptocurrencyTicker.prototype = {
 
     var right = new St.BoxLayout({
       vertical: true,
-      width: WIDTH - PADDING - WIDTH_ICON,
+      width: WIDTH - PADDING - 50,
       style_class: 'containerRight'
     });
     var label = new St.Label({
