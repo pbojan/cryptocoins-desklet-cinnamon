@@ -49,7 +49,7 @@ CryptocurrencyTicker.prototype = {
 
       this.settings = new Settings.DeskletSettings(this, this.metadata.uuid, desklet_id);
       this.settings.bind('apiKey', 'cfgApiKey', this.onSettingsChanged);
-      this.settings.bind('coin', 'cfgCoin', this.onSettingsChanged);
+      this.settings.bind('symbol', 'cfgCoin', this.onSettingsChanged);
       this.settings.bind('currency', 'cfgCurrency', this.onSettingsChanged);
       this.settings.bind('assetsOwned', 'cfgAssetsOwned', this.onSettingsChanged);
       this.settings.bind('assetsValue', 'cfgAssetsValue', this.onSettingsChanged);
@@ -60,7 +60,7 @@ CryptocurrencyTicker.prototype = {
       this.setHeader('Crypto Coins Ticker');
 
       this.cfgApiKey = this.cfgApiKey || '';
-      this.cfgCoin = this.cfgCoin || '1';
+      this.cfgCoin = this.cfgCoin || 'ETH';
       this.cfgCurrency = this.cfgCurrency.toUpperCase() || 'USD';
       this.cfgAssetsOwned = this.cfgAssetsOwned || 0.0;
       this.cfgAssetsValue = this.cfgAssetsValue || 0.0;
@@ -159,7 +159,7 @@ CryptocurrencyTicker.prototype = {
 
     var message = Soup.Message.new(
         'GET',
-        API_URL + '?id=' + parseInt(this.cfgCoin) + '&convert=' + this.cfgCurrency
+        API_URL + '?symbol=' + this.cfgCoin + '&convert=' + this.cfgCurrency
     );
     message.request_headers.append('X-CMC_PRO_API_KEY', this.cfgApiKey);
 
