@@ -2,7 +2,7 @@
 
 Cryptocurrency Ticker (Desklet) for Cinnamon Desktop that displays the current price of more than **800+ cryptocurrencies**, and their daily percent changes.
 
-The official website for news and updates about this Cryptocurrency Ticker: http://cryptocurrencyticker.info/
+The official website for news and updates about this Cryptocurrency Ticker: https://cryptocurrencyticker.xyz/
 
 ![Desklet screenshot](screenshot.png)
 
@@ -48,7 +48,7 @@ The official website for news and updates about this Cryptocurrency Ticker: http
 
 If you find any bugs or stability issues please create an issue [here](https://github.com/pbojan/cryptocoins-desklet-cinnamon/issues) or send an email to [p.bojan@live.com](mailto:p.bojan@live.com).
 
-If you have ideas for new features or improvements please send an email to [p.bojan@live.com](mailto:p.bojan@live.com).
+If you have ideas for new features or improvements please email [p.bojan@live.com](mailto:p.bojan@live.com).
 
 ## Contribute/Donate
 
