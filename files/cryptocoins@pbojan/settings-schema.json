@@ -21,11 +21,20 @@
     "description" : "Cryptocurrency Options"
   },
 
-  "symbol": {
+  "coinSymbol": {
    "type": "entry" ,
-   "default": "ETH",
-   "description": "Symbol of Cryptocurrency to show"
+   "default": "BTC",
+   "description": "Symbol",
+   "tooltip": "The Cryptocurrency Symbol you want to display e.g. BTC, ETH, LTC.."
   },
+
+  "coinID": {
+    "type": "entry",
+    "default": "",
+    "description": "ID (coinmarketcap)",
+    "tooltip": "In same rare cases the Cryptocurrency Symbol is not unique e.g. BTCV so you can use the CoinID to specify the exact Cryptocurrency you want to display. Check the documentation to see how to get the CoinID from coinmarketcap."
+  },
+
   "currency": {
     "type": "combobox",
     "default": "USD",
