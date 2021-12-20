@@ -62,7 +62,7 @@ To find the correct Coin ID for your cryptocurrency you can execute the followin
 curl --header 'X-CMC_PRO_API_KEY: YOUR_API_KEY' https://pro-api.coinmarketcap.com/v1/cryptocurrency/map | json_pp | grep BTCV -A 10 -B 10
 ```
 
-These will return all cryptocurrencies that are using the same SYMBOL from which you can get the id and use it to configure the Coin ID in the desklet.
+This command will return all cryptocurrencies that are using the same SYMBOL from which you can get the id and use it to configure the Coin ID in the desklet.
 
 ## Bugs/Feedback
 
