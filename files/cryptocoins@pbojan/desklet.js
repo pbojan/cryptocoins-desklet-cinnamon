@@ -12,7 +12,7 @@ const Util = imports.misc.util;
 const UUID = 'cryptocoins@pbojan';
 const DESKLET_ROOT = imports.ui.deskletManager.deskletMeta[UUID].path;
 const HELP_URL = 'https://github.com/pbojan/cryptocoins-desklet-cinnamon#usage-help';
-const DONATE_URL = 'https://cryptocurrencyticker.xyz/#contribute';
+const DONATE_URL = 'https://github.com/pbojan/cryptocoins-desklet-cinnamon?tab=readme-ov-file#contributedonate';
 const API_URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
 const WIDTH = 220;
 const WIDTH_ICON = 50 / global.ui_scale;
